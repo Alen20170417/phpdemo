@@ -1,0 +1,214 @@
+users
++------------+------------------+------+-----+---------------------+----------------+
+| Field      | Type             | Null | Key | Default             | Extra          |
++------------+------------------+------+-----+---------------------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL                | auto_increment |
+| username   | varchar(255)     | NO   |     | NULL                |                |
+| phone      | varchar(255)     | NO   |     | NULL                |                |
+| email      | varchar(255)     | NO   |     | NULL                |                |
+| password   | varchar(255)     | NO   |     | NULL                |                |
+| level      | varchar(255)     | NO   |     | NULL                |                |
+| pic        | varchar(255)     | NO   |     | NULL                |                |
+| status     | int(11)          | NO   |     | NULL                |                |
+| created_at | timestamp        | NO   |     | 0000-00-00 00:00:00 |                |
+| updated_at | timestamp        | NO   |     | 0000-00-00 00:00:00 |                |
++------------+------------------+------+-----+---------------------+----------------+
+10 rows in set (0.07 sec)
+
+addresses
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| user_id    | int(11)          | NO   |     | NULL    |                |
+| consignee  | varchar(255)     | NO   |     | NULL    |                |
+| tel        | varchar(255)     | NO   |     | NULL    |                |
+| province   | varchar(255)     | NO   |     | NULL    |                |
+| city       | varchar(255)     | NO   |     | NULL    |                |
+| district   | varchar(255)     | NO   |     | NULL    |                |
+| address    | varchar(255)     | NO   |     | NULL    |                |
+| postcode   | varchar(255)     | NO   |     | NULL    |                |
+| created_at | timestamp        | NO   |     | NULL    |                |
+| updated_at | timestamp        | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+11 rows in set (0.00 sec)
+
+carts
++------------+------------------+------+-----+---------------------+----------------+
+| Field      | Type             | Null | Key | Default             | Extra          |
++------------+------------------+------+-----+---------------------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL                | auto_increment |
+| user_id    | int(11)          | NO   |     | NULL                |                |
+| sku_id     | int(11)          | NO   |     | NULL                |                |
+| goods_id   | int(11)          | NO   |     | NULL                |                |
+| goods_name | varchar(255)     | NO   |     | NULL                |                |
+| goods_attr | varchar(255)     | NO   |     | NULL                |                |
+| goods_num  | int(11)          | NO   |     | NULL                |                |
+| created_at | timestamp        | NO   |     | 2016-07-27 22:44:49 |                |
+| updated_at | timestamp        | NO   |     | 2016-07-27 22:44:49 |                |
++------------+------------------+------+-----+---------------------+----------------+
+9 rows in set (0.03 sec)
+
+cates
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(255)     | NO   |     | NULL    |                |
+| img        | varchar(255)     | NO   |     | NULL    |                |
+| pid        | varchar(255)     | NO   |     | NULL    |                |
+| path       | varchar(255)     | NO   |     | NULL    |                |
+| status     | int(11)          | NO   |     | NULL    |                |
+| created_at | timestamp        | NO   |     | NULL    |                |
+| updated_at | timestamp        | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+goods
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| title      | varchar(255)     | NO   |     | NULL    |                |
+| sub_title  | varchar(255)     | YES  |     | NULL    |                |
+| cate_id    | varchar(255)     | NO   |     | NULL    |                |
+| price      | decimal(8,2)     | NO   |     | NULL    |                |
+| content    | text             | NO   |     | NULL    |                |
+| img        | text             | NO   |     | NULL    |                |
+| showImg    | text             | NO   |     | NULL    |                |
+| status     | tinyint(4)       | NO   |     | 1       |                |
+| created_at | timestamp        | NO   |     | NULL    |                |
+| updated_at | timestamp        | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+11 rows in set (0.00 sec)
+
+skus
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| good_id    | tinyint(4)       | NO   |     | NULL    |                |
+| title      | varchar(255)     | NO   |     | NULL    |                |
+| attr       | varchar(255)     | NO   |     | NULL    |                |
+| color      | varchar(255)     | NO   |     | NULL    |                |
+| falsePrice | varchar(255)     | NO   |     | NULL    |                |
+| price      | varchar(255)     | NO   |     | NULL    |                |
+| img        | varchar(255)     | NO   |     | NULL    |                |
+| info       | text             | NO   |     | NULL    |                |
+| stock      | varchar(255)     | NO   |     | NULL    |                |
+| status     | tinyint(4)       | NO   |     | 1       |                |
+| created_at | timestamp        | YES  |     | NULL    |                |
+| updated_at | timestamp        | YES  |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+13 rows in set (0.00 sec)
+
+comments
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| content    | text             | NO   |     | NULL    |                |
+| good_id    | int(11)          | NO   |     | NULL    |                |
+| user_id    | int(11)          | NO   |     | NULL    |                |
+| pid        | int(11)          | NO   |     | NULL    |                |
+| path       | varchar(255)     | NO   |     | NULL    |                |
+| img        | varchar(255)     | NO   |     | NULL    |                |
+| star       | varchar(255)     | NO   |     | NULL    |                |
+| useless    | varchar(255)     | NO   |     | NULL    |                |
+| status     | tinyint(4)       | NO   |     | 1       |                |
+| created_at | timestamp        | NO   |     | NULL    |                |
+| updated_at | timestamp        | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+12 rows in set (0.06 sec)
+
+order_goods
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| order_id   | int(11)          | NO   |     | NULL    |                |
+| sku_id     | int(11)          | NO   |     | NULL    |                |
+| price      | decimal(10,2)    | NO   |     | NULL    |                |
+| num        | int(11)          | NO   |     | NULL    |                |
+| goods_name | varchar(255)     | NO   |     | NULL    |                |
+| goods_attr | varchar(255)     | NO   |     | NULL    |                |
+| color      | varchar(255)     | NO   |     | NULL    |                |
+| created_at | timestamp        | NO   |     | NULL    |                |
+| updated_at | timestamp        | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+10 rows in set (0.02 sec)
+
+orders
++--------------+------------------+------+-----+---------+----------------+
+| Field        | Type             | Null | Key | Default | Extra          |
++--------------+------------------+------+-----+---------+----------------+
+| id           | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| user_id      | int(11)          | NO   |     | NULL    |                |
+| order_status | int(11)          | NO   |     | NULL    |                |
+| pay_status   | int(11)          | NO   |     | 0       |                |
+| order_num    | varchar(255)     | NO   |     | NULL    |                |
+| pack_fee     | int(11)          | NO   |     | NULL    |                |
+| pack_time    | int(11)          | NO   |     | NULL    |                |
+| total_price  | decimal(8,2)     | NO   |     | NULL    |                |
+| consignee    | varchar(255)     | NO   |     | NULL    |                |
+| province     | varchar(255)     | NO   |     | NULL    |                |
+| city         | varchar(255)     | NO   |     | NULL    |                |
+| district     | varchar(255)     | NO   |     | NULL    |                |
+| address      | varchar(255)     | NO   |     | NULL    |                |
+| phone        | varchar(255)     | NO   |     | NULL    |                |
+| created_at   | timestamp        | NO   |     | NULL    |                |
+| updated_at   | timestamp        | NO   |     | NULL    |                |
++--------------+------------------+------+-----+---------+----------------+
+16 rows in set (0.01 sec)
+
+help_cates
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(255)     | NO   |     | NULL    |                |
+| pid        | int(11)          | NO   |     | NULL    |                |
+| show       | tinyint(4)       | NO   |     | NULL    |                |
+| path       | varchar(255)     | NO   |     | NULL    |                |
+| status     | tinyint(4)       | NO   |     | NULL    |                |
+| created_at | timestamp        | NO   |     | NULL    |                |
+| updated_at | timestamp        | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+help_articles
++--------------+------------------+------+-----+---------+----------------+
+| Field        | Type             | Null | Key | Default | Extra          |
++--------------+------------------+------+-----+---------+----------------+
+| id           | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| help_cate_id | int(11)          | NO   |     | NULL    |                |
+| title        | varchar(255)     | NO   |     | NULL    |                |
+| content      | text             | NO   |     | NULL    |                |
+| status       | tinyint(4)       | NO   |     | NULL    |                |
+| url          | varchar(255)     | NO   |     | NULL    |                |
+| created_at   | timestamp        | NO   |     | NULL    |                |
+| updated_at   | timestamp        | NO   |     | NULL    |                |
++--------------+------------------+------+-----+---------+----------------+
+8 rows in set (0.02 sec)
+
+migrations
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| migration | varchar(255) | NO   |     | NULL    |       |
+| batch     | int(11)      | NO   |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+2 rows in set (0.04 sec)
+
+navigations
++--------------+------------------+------+-----+---------+----------------+
+| Field        | Type             | Null | Key | Default | Extra          |
++--------------+------------------+------+-----+---------+----------------+
+| id           | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| nav_name     | varchar(255)     | NO   |     | NULL    |                |
+| nav_url      | varchar(255)     | NO   |     | NULL    |                |
+| sku_id_group | varchar(255)     | NO   |     | NULL    |                |
+| status       | varchar(255)     | NO   |     | NULL    |                |
++--------------+------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
